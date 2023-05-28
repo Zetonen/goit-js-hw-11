@@ -60,7 +60,7 @@ async function searchMoreImage() {
 
     populateMarkup(data.hits)
     gallery.refresh();
-    if (data.hits.length < pixabay.per_page) {
+    if (data.hits.length < pixabay.per_page || pixabay.per_page * pixabay.page >= 500) {
       refs.loadMoreBtn.classList.add('is-hidden');
       Notify.info(
         "We're sorry, but you've reached the end of search results."
